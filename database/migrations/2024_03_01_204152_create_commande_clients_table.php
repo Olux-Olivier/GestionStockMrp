@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('commande_clients', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->date('date_commande');
+            $table->float('prix_unitaire');
             $table->timestamps();
+        });
+        Schema::create('commande_client_produit', function (Blueprint $table) {
+            $table->foreignIdFor(\App\Models\Commande::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Produit::class)->constrained()->cascadeOnDelete();
+            $table->primary(['commande_id', 'produit_id']);
         });
     }
 
@@ -23,5 +31,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('commande_clients');
+        Schema::dropIfExists('commande_client_produit');
     }
 };

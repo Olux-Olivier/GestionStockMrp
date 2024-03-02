@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
+            $table->string('desgination');
+            $table->float('prix');
+            $table->integer('quantite_stock');
+            $table->string('seuil_alerte');
             $table->timestamps();
+        });
+        Schema::table('matpremieres', function (Blueprint $table){
+            $table->foreignIdFor(\App\Models\Produit::class)->constrained()->cascadeOnDelete();
         });
     }
 
@@ -23,5 +30,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('produits');
+        Schema::create('matpremieres', function(Blueprint $table){
+            $table->dropForeignIdFor(\App\Models\Produit::class);
+        });
     }
 };

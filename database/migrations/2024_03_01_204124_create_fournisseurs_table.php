@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('fournisseurs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('adresse');
             $table->timestamps();
+
+        });
+        Schema::table('matpremieres', function (Blueprint $table){
+            $table->foreignIdFor(\App\Models\Fournisseur::class)->constrained()->cascadeOnDelete();
         });
     }
 
@@ -23,5 +30,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('fournisseurs');
+        Schema::create('matpremieres', function(Blueprint $table){
+            $table->dropForeignIdFor(\App\Models\Fournisseur::class);
+        });
     }
 };

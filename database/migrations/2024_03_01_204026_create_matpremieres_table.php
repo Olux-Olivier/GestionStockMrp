@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('matpremieres', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->integer('quantite_stock');
             $table->timestamps();
         });
     }
