@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('adresse');
             $table->timestamps();
         });
+        Schema::table('commande_clients', function (Blueprint $table){
+            $table->foreignIdFor(\App\Models\Client::class)->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -26,5 +29,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('clients');
+        Schema::create('commande_clients', function(Blueprint $table){
+            $table->dropForeignIdFor(\App\Models\Client::class);
+        });
     }
 };

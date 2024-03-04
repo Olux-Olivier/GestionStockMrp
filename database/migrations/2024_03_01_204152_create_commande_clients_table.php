@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('commande_clients', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
-            $table->date('date_commande');
+            $table->integer('quantite');
             $table->float('prix_unitaire');
+            $table->date('date_commande');
+            
             $table->timestamps();
         });
         Schema::create('commande_client_produit', function (Blueprint $table) {

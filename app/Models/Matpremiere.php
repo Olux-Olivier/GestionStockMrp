@@ -9,7 +9,8 @@ class Matpremiere extends Model
 {
     use HasFactory;
     protected $fillable = [
-
+        'designation',
+        'quantite_stock'
     ];
 
     public function produit()
