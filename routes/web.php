@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FournisseurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('Ajout_fournisseur', [FournisseurController::class, 'index'])->name('Ajout_Fournissuer');
 
 //code
