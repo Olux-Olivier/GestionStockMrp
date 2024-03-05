@@ -12,7 +12,7 @@ class Fournisseur extends Model
     protected $fillable = [
         'name',
         'email',
-        'addresse',
+        'adresse',
     ];
 
 }
