@@ -9,7 +9,11 @@ class Commande extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'designation',
+        'delai_livraison',
+        'etat_commande',
+        'date_livraison',
+        'quantite',
     ];
 
     public function fournisseur(){
