@@ -22,6 +22,10 @@ return new class extends Migration
         Schema::table('matpremieres', function (Blueprint $table){
             $table->foreignIdFor(\App\Models\Fournisseur::class)->constrained()->cascadeOnDelete();
         });
+
+        Schema::table('commandes', function (Blueprint $table){
+            $table->foreignIdFor(\App\Models\Fournisseur::class)->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -30,6 +34,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('fournisseurs');
+        Schema::create('commandes', function(Blueprint $table){
+            $table->dropForeignIdFor(\App\Models\Fournisseur::class);
+        });
+        
         Schema::create('matpremieres', function(Blueprint $table){
             $table->dropForeignIdFor(\App\Models\Fournisseur::class);
         });

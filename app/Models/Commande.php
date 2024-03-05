@@ -9,6 +9,10 @@ class Commande extends Model
 {
     use HasFactory;
     protected $fillable = [
-
+        
     ];
+
+    public function fournisseur(){
+        return $this->belongsTo(Fournisseur::class);
+    }
 }

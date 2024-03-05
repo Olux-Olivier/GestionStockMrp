@@ -13,8 +13,15 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
+            $table->date('delai_livraison');
+            $table->boolean('etat_commande');
+            $table->date('date_livraison')->nullable();
+            $table->integer('quantite');
             $table->timestamps();
         });
+        
+        
     }
 
     /**
