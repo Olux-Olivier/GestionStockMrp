@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FournisseurController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('Ajout_fournisseur', [FournisseurController::class, 'index'])->name('Ajout_Fournissuer');
 
+Route::get('Ajout_fournisseur', [FournisseurController::class, 'index'])->name('Ajout_Fournissuer');
+Route::get('Ajout_client', [ClientController::class, 'index'])->name('Ajout_Client');
 //code
