@@ -23,6 +23,6 @@
             <input type="submit" value="Ajouter Fournisseur">
         </form>
     </div>
-
+    
 </body>
 </html>
