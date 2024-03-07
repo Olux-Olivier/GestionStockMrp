@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientRequest;
 
 class ClientController extends Controller
 {
@@ -13,7 +14,9 @@ class ClientController extends Controller
     public function index()
     {
         //
-        return view('formulaires.AjoutClient');
+        $client = Client::all();
+        return view('formulaires.AjoutClient', ['client' => $client]);
+        
     }
 
     /**
@@ -21,15 +24,16 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('formulaires.AjoutClient');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
         //
+        Client::create($request->validated());
     }
 
     /**

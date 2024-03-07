@@ -10,15 +10,16 @@
     
     <div class="container">
         <h2>Ajout du client</h2>
-        <form id="addCustomerForm" method="" action="">
+        <form id="addCustomerForm" method="post" action="/client">
+            @csrf
             <label for="customerName">Nom du client:</label>
-            <input type="text" id="customerName" name="customerName" required>
+            <input type="text" id="customerName" name="name">
 
             <label for="supplierEmail">Adresse E-mail:</label>
-            <input type="email" id="customerEmail" name="customerEmail" required>
+            <input type="email" id="customerEmail" name="email">
 
             <label for="supplierAddress">Adresse Physique:</label>
-            <input type="text" id="customerAddress" name="customerAddress" required>
+            <input type="text" id="customerAddress" name="adresse">
 
             <input type="submit" value="Ajouter Client">
         </form>
