@@ -13,6 +13,8 @@ class CommandeController extends Controller
     public function index()
     {
         //
+        $commandes = Commande::all();
+        return view('listes.commandes', ['commandes' => $commandes]);
     }
 
     /**

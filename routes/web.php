@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FournisseurController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CommandeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,6 @@ Route::post('fournisseur', [FournisseurController::class, 'store']);
 
 Route::get('client/create', [ClientController::class, 'create'])->name('Ajout_Client');
 Route::post('client', [ClientController::class, 'store']);
+
+Route::get('commande/index', [CommandeController::class, 'index']);
 //code
