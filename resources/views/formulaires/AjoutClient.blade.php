@@ -12,13 +12,13 @@
         <h2>Ajout du client</h2>
         <form id="addCustomerForm" method="post" action="/client">
             @csrf
-            <label for="customerName">Nom du client:</label>
+            <label for="customerName">Name :</label>
             <input type="text" id="customerName" name="name">
 
-            <label for="supplierEmail">Adresse E-mail:</label>
+            <label for="supplierEmail">E-mail:</label>
             <input type="email" id="customerEmail" name="email">
 
-            <label for="supplierAddress">Adresse Physique:</label>
+            <label for="supplierAddress">Adresse :</label>
             <input type="text" id="customerAddress" name="adresse">
 
             <input type="submit" value="Ajouter Client">
