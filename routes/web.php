@@ -20,11 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('fournisseur/create', [FournisseurController::class, 'create'])->name('Ajout_Fournissuer');
-Route::post('fournisseur', [FournisseurController::class, 'store']);
+Route::resource('fournisseur', FournisseurController::class)->names([
+    'index' => 'fournisseur.index',
+    'create' => 'fournisseur.create',
+    'edit' => 'fournisseur.edit',
 
-Route::get('client/create', [ClientController::class, 'create'])->name('Ajout_Client');
-Route::post('client', [ClientController::class, 'store']);
+]);
 
-Route::get('commande/index', [CommandeController::class, 'index']);
+Route::resource('client',ClientController::class)->names([
+    'index' => 'client.index',
+    'create' => 'client.create',
+    'edit' => 'client.edit',
+
+]);
+
+Route::resource('commande',CommandeController::class);
 //code

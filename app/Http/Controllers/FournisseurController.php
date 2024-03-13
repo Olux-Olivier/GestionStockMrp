@@ -14,9 +14,9 @@ class FournisseurController extends Controller
     public function index()
     {
         //
-        $fournisseur = Fournisseur::all();
-        return view('formulaires.AjoutFournisseur', ['fournisseur' => $fournisseur]);
-        
+        $fournisseurs = Fournisseur::all();
+        return view('listes.Fournisseur', ['fournisseurs' => $fournisseurs]);
+
     }
 
     /**
@@ -33,8 +33,9 @@ class FournisseurController extends Controller
      */
     public function store(FournisseurRequest $request)
     {
-        //
+
         Fournisseur::create($request->validated());
+        return to_route('fournisseur.index')->with('succes', "Fournisseur enregistrer avec succes !");
     }
 
     /**

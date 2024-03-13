@@ -44,3 +44,7 @@ body {
   label{
     font-family: 'roboto light';
   }
+
+  .error{
+      color : red;
+  }

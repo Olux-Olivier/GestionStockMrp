@@ -22,7 +22,7 @@ class FournisseurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nom' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:fournisseurs,email',
             'adresse' => 'required|string|max:255',
         ];

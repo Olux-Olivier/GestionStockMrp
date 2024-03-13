@@ -14,9 +14,9 @@ class ClientController extends Controller
     public function index()
     {
         //
-        $client = Client::all();
-        return view('formulaires.AjoutClient', ['client' => $client]);
-        
+        $clients = Client::all();
+        return view('listes.Client', ['clients' => $clients]);
+
     }
 
     /**
@@ -34,6 +34,7 @@ class ClientController extends Controller
     {
         //
         Client::create($request->validated());
+        return to_route('client.index')->with('succes', "Client enregistrer avec succes !");
     }
 
     /**

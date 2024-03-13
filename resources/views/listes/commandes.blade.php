@@ -1,75 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau des commandes</title>
-  <style>
-    /* Styles CSS personnalisés */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      margin-top:100px;
-    }
-    .profile-info {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      text-align: right;
-    }
-    .profile-info img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-    }
-    .profile-info p {
-      margin-bottom: 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 50px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    th:first-child, td:first-child {
-      border-left: none;
-    }
-    th:last-child, td:last-child {
-      border-right: none;
-    }
-    tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    .btn {
-      padding: 5px 10px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-    }
-    .btn-danger {
-      background-color: #dc3545;
-      color: #fff;
-      border: none;
-    }
-  </style>
-</head>
-<body>
+@extends('base')
+
+@section('title', 'listes commandes')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/commande/commande.css') }}">
+@endsection
+@section('content')
   <!-- Informations de la personne connectée -->
   <div class="profile-info">
     <img src="https://via.placeholder.com/50" alt="Photo de profil">
@@ -117,5 +53,4 @@
       </tbody>
     </table>
   </div>
-</body>
-</html>
+@endsection
