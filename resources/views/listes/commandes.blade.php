@@ -22,9 +22,9 @@
           <th scope="col">ID</th>
           <th scope="col">Désignation</th>
           <th scope="col">Quantité</th>
-          <th scope="col">Prix unitaire</th>
-          <th scope="col">Date de commande</th>
+          <th scope="col">Prix unitaire</th>  
           <th scope="col">Délai livraison</th>
+          <th scope="col">Date de commande</th>
           <th scope="col">Date livraison</th>
           <th scope="col">État</th>
           <th scope="col">Respect livraison</th>
@@ -34,15 +34,15 @@
       <tbody>
         <!-- Exemple de données de commande -->
         <tr>
-          <td>1</td>
-          <td>Produit A</td>
-          <td>10</td>
-          <td>50 €</td>
-          <td>2024-03-10</td>
-          <td>5 jours</td>
-          <td>2024-03-15</td>
-          <td>En cours</td>
-          <td>0</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td>
             <!-- Boutons Modifier et Supprimer -->
             <button class="btn btn-primary">Modifier</button>

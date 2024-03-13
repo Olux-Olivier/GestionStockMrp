@@ -14,10 +14,15 @@ return new class extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->string('designation');
-            $table->date('delai_livraison');
-            $table->boolean('etat_commande');
-            $table->date('date_livraison')->nullable();
             $table->integer('quantite');
+            $table->double('prix_unitaire');
+            $table->integer('delai_livraison');
+            $table->date('date_livraison')->nullable();
+            $table->string('etat_commande');
+            $table->boolean('respect_livraison')->nullable();
+            $table->string('email_fournisseur');
+
+
             $table->timestamps();
         });
         

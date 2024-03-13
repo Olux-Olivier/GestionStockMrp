@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Commande;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommandeRequest;
 
 class CommandeController extends Controller
 {
@@ -23,14 +24,17 @@ class CommandeController extends Controller
     public function create()
     {
         //
+        return view('formulaires.AjoutCommande');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CommandeRequest $request)
     {
         //
+        Commande::create($request->validated());
+        return to_route('commande.index')->with('succes', "Commande enregistrée avec succes !");
     }
 
     /**

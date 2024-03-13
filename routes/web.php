@@ -34,5 +34,9 @@ Route::resource('client',ClientController::class)->names([
 
 ]);
 
-Route::resource('commande',CommandeController::class);
+Route::resource('commande',CommandeController::class)->names([
+    'index' => 'commande.index',
+    'create' => 'commande.create',
+    'edit' => 'commande.edit',
+]);
 //code
