@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('designation');
             $table->integer('quantite');
-            $table->double('prix_unitaire');
+            $table->integer('prix_unitaire');
             $table->integer('delai_livraison');
             $table->date('date_livraison')->nullable();
             $table->string('etat_commande');

@@ -43,7 +43,7 @@
             <!-- email fournisseur -->
            
             <select name="email_fournisseur" id="">
-                <option value="">kamoto@gmail.com</option>
+                <option value="kamoto@gmail.com">kamoto@gmail.com</option>
             </select>
             
             <!-- etat par defaut commande -->
