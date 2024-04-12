@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FournisseurRequest extends FormRequest
@@ -22,9 +23,9 @@ class FournisseurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:fournisseurs,email',
-            'adresse' => 'required|string|max:255',
+            'name' => ['required','string','max:255'],
+            'email' => ['required','email', Rule::unique("fournisseurs")->ignore($this->route()->parameter("fournisseur"))],
+            'adresse' => ['required', 'string','max:255'],
         ];
     }
 }

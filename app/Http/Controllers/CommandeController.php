@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
+use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommandeRequest;
 
@@ -24,7 +25,8 @@ class CommandeController extends Controller
     public function create()
     {
         //
-        return view('formulaires.AjoutCommande');
+        $fournisseurs = Fournisseur::all();
+        return view('formulaires.AjoutCommande',['fournisseurs'=>$fournisseurs]);
     }
 
     /**

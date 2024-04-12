@@ -17,6 +17,12 @@
             {{$fournisseur->name}}
             {{$fournisseur->email}}
             {{$fournisseur->adresse}}
+            <a href="/fournisseur/{{$fournisseur->id}}/edit">Modifier</a>
+            <form action="{{route('fournisseur.destroy',$fournisseur)}}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit">Supprimer</button>
+            </form>
             <br>
         @endforeach
     </div>

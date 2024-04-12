@@ -51,15 +51,19 @@ class FournisseurController extends Controller
      */
     public function edit(Fournisseur $fournisseur)
     {
-        //
+        
+        return view('formulaires.ModifierFournisseur',[
+            'fournisseur' => $fournisseur
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Fournisseur $fournisseur)
+    public function update(FournisseurRequest $request, Fournisseur $fournisseur)
     {
-        //
+        $fournisseur->update($request->validated());
+        echo "modifier avec succes !";
     }
 
     /**
@@ -67,6 +71,10 @@ class FournisseurController extends Controller
      */
     public function destroy(Fournisseur $fournisseur)
     {
-        //
+
+        $fournisseur->delete();
+        return to_route('fournisseur.index')->with([
+            'success' => 'Fournisseur supprimé avec succes'
+        ]);
     }
 }

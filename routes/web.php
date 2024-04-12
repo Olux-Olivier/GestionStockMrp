@@ -24,7 +24,7 @@ Route::resource('fournisseur', FournisseurController::class)->names([
     'index' => 'fournisseur.index',
     'create' => 'fournisseur.create',
     'edit' => 'fournisseur.edit',
-
+    'update' => 'fournisseur.update'
 ]);
 
 Route::resource('client',ClientController::class)->names([

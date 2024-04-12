@@ -17,7 +17,7 @@
                 {{$message}}
                 @enderror
             </span><br> -->
-            
+
             <input type="text" id="designation" name="designation" placeholder="designation" value="{{old('designation')}}">
 
             <!-- <span class="error">
@@ -25,7 +25,7 @@
                 {{$message}}
                 @enderror
             </span><br> -->
-            
+
             <input type="number" id="quantite" name="quantite" placeholder="quantite" value="{{old('quantite')}}">
 
             <!-- <span class="error">
@@ -39,13 +39,14 @@
 
             <!-- delai livraison -->
             <input type="number" id="delai_livraison" name="delai_livraison" placeholder="delai livraison en jour" value="{{old('delai_livraison')}}">
-            
+
             <!-- email fournisseur -->
-           
+
             <select name="email_fournisseur" id="">
                 <option value="kamoto@gmail.com">kamoto@gmail.com</option>
             </select>
-            
+
+
             <!-- etat par defaut commande -->
             <input type="text" id="etat_commande" name="etat_commande" placeholder="etat commande" value="{{old('etat_commande')}}">
             <input type="submit" value="Passer Commande">
