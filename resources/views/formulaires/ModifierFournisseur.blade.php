@@ -37,7 +37,7 @@
             <label for="supplierAddress">Adresse :</label>
             <input type="text" id="supplierAddress" name="adresse" value="{{$fournisseur->adresse}}">
 
-            <input type="submit" value="Ajouter Fournisseur">
+            <input type="submit" value="Confirmer">
         </form>
     </div>
 

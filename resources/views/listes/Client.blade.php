@@ -16,6 +16,12 @@
             {{$client->name}}
             {{$client->email}}
             {{$client->adresse}}
+            <a href="/client/{{$client->id}}/edit">Modifier</a>
+            <form action="{{route('client.destroy',$client)}}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit">Supprimer</button>
+            </form>
             <br>
         @endforeach
     </div>

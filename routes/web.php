@@ -31,6 +31,7 @@ Route::resource('client',ClientController::class)->names([
     'index' => 'client.index',
     'create' => 'client.create',
     'edit' => 'client.edit',
+    'update' => 'client.update'
 
 ]);
 
@@ -38,5 +39,6 @@ Route::resource('commande',CommandeController::class)->names([
     'index' => 'commande.index',
     'create' => 'commande.create',
     'edit' => 'commande.edit',
+    'update' => 'commande.update'
 ]);
 //code

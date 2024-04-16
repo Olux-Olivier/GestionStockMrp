@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Modifier Fournisseur')
+@section('title', 'Modifier Client')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/formulaires/AjoutFournisseur.css') }}">
@@ -10,8 +10,8 @@
 
     <div class="container">
 
-        <h2>Modifier de Fournisseur</h2>
-        <form id="addSupplierForm"  action="{{route('fournisseur.update', $fournisseur)}}" method='post'>
+        <h2>Modifier un client</h2>
+        <form id="addCustomerForm"  action="{{route('client.update', $client)}}" method='post'>
             @csrf
             @method('put')
             <span class="error">
@@ -19,25 +19,25 @@
                 {{$message}}
                 @enderror
             </span><br>
-            <label for="supplierName">Name :</label>
-            <input type="text" id="supplierName" name="name" value="{{$fournisseur->name}}">
+            <label for="customerName">Name :</label>
+            <input type="text" id="customerName" name="name" value="{{$client->name}}">
             <span class="error">
                 @error('email')
                     {{$message}}
                 @enderror
             </span><br>
-            <label for="supplierEmail">E-mail :</label>
-            <input type="email" id="supplierEmail" name="email" value="{{$fournisseur->email}}">
+            <label for="customerEmail">E-mail :</label>
+            <input type="email" id="customerEmail" name="email" value="{{$client->email}}">
 
             <span class="error">
                 @error('adresse')
                 {{$message}}
                 @enderror
             </span><br>
-            <label for="supplierAddress">Adresse :</label>
-            <input type="text" id="supplierAddress" name="adresse" value="{{$fournisseur->adresse}}">
+            <label for="customerAddress">Adresse :</label>
+            <input type="text" id="customerAddress" name="adresse" value="{{$client->adresse}}">
 
-            <input type="submit" value="Ajouter Fournisseur">
+            <input type="submit" value="Confirmer">
         </form>
     </div>
 

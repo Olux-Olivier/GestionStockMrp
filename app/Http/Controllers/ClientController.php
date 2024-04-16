@@ -51,15 +51,23 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('formulaires.ModifierClient',[
+            'client' => $client
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(ClientRequest $request, Client $client)
     {
         //
+        
+        $client->update($request->validated());
+        
+        return to_route('client.index')->with([
+            'success' => 'modifier avec succes!'
+        ]);
     }
 
     /**
@@ -68,5 +76,9 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+        $client->delete();
+        return to_route('client.index')->with([
+            'success' => 'Client supprimé avec succes'
+        ]);
     }
 }
